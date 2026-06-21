@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff9ecf, #ff69b4, #ffc0cb);
+}
+
+/* Main Container */
+.container {
+  text-align: center;
+  z-index: 10;
+}
+
+h1 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Beating Heart */
+.big-heart {
+  font-size: 90px;
+  margin-bottom: 20px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Buttons */
+button {
+  padding: 15px 35px;
+  font-size: 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+#yesBtn {
+  background: #ff3366;
+  color: white;
+}
+
+#noBtn {
+  background: #666;
+  color: white;
+  position: relative;
+}
+
+#message {
+  margin-top: 20px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Heart Fireworks */
+.heart {
+  position: absolute;
+  font-size: 30px;
+  animation: explode 2s linear forwards;
+}
+
+@keyframes explode {
+  from {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) scale(2);
+  }
+}
+
+/* Floating Hearts */
+.floating-heart {
+  position: absolute;
+  font-size: 22px;
+  opacity: 0.8;
+  animation: float 8s linear forwards;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-150px);
+  }
+}
+
+/* Roses */
+.rose {
+  position: absolute;
+  font-size: 30px;
+  animation: fall 8s linear forwards;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+/* Sparkles */
+.sparkle {
+  position: absolute;
+  font-size: 20px;
+  animation: sparkleAnim 2s linear forwards;
+}
+
+@keyframes sparkleAnim {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+/* Final Love Screen */
+#loveScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../../../../Downloads/Cjlang.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 2s ease;
+  z-index: 9999;
+}
+
+#loveScreen.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.loveText {
+  color: #ff3366;
+  font-size: 5rem;
+  text-align: center;
+  text-shadow: 0 0 20px #ff3366;
+  animation: pulseText 1s infinite;
+}
+
+@keyframes pulseText {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Final Heart Fireworks */
+.blackHeart {
+  position: absolute;
+  font-size: 35px;
+  animation: blackFirework 3s linear forwards;
+}
+
+@keyframes blackFirework {
+  from {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) scale(3);
+  }
+}
